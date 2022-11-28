@@ -16,5 +16,8 @@ jobs:
         id: whoDidIt
         run: echo "::set-output name=userName::SAMSMITHNZ"
       - run: echo 'Actor is [${{ steps.whoDidIt.outputs.userName }}]'
-      - run: printenv 
-      - run: printenv ABC123
+      - run: |
+          echo ${NAME}
+        env:
+          NAME: ${{ secrets.HOST_NAME }}
+      - run: echo ${{ secrets.ABC123 || 
