@@ -20,4 +20,4 @@ jobs:
           echo ${NAME}
         env:
           NAME: ${{ secrets.HOST_NAME }}
-      - run: echo ${{ secrets.ABC123 || 
+      - run: echo ${{ secrets.ABC123 }}
